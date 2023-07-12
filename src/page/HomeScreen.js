@@ -6,11 +6,11 @@ function HomeScreen () {
   return(
     <AppBar>
       <Navbar>
-
+      
       </Navbar>
     </AppBar>
    
-  )    
+  );    
 }
 
 export default HomeScreen
