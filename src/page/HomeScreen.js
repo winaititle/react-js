@@ -6,7 +6,7 @@ function HomeScreen () {
   return(
     <AppBar>
       <Navbar>
-      
+      <h1>ssss</h1>
       </Navbar>
     </AppBar>
    
