@@ -7,6 +7,7 @@ function HomeScreen () {
     <AppBar>
       <Navbar>
       <h1>ssss</h1>
+      <h2>sssss</h2>
       </Navbar>
     </AppBar>
    
