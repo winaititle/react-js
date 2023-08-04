@@ -33,7 +33,7 @@ function AvatarUploader({ onUpdate }) {
       <h1>{person.name}'s Todos</h1>
       <img
         className="avatar"
-        src={"https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/06/gojo2.jpg"} alt="Selected Avatar"
+        src={"selectedImage"} alt="Selected Avatar"
         width={90}
         >
         </img>

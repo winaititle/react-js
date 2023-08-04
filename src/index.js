@@ -22,6 +22,7 @@ root.render(
     <Route path="/Navbar" element={<Navbar />} /> 
     <Route path="/Profile" element ={<Profile/>}/>
     <Route path="/HomeScreen" element ={<HomeScreen/>}/>
+    
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

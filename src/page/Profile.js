@@ -1,47 +1,60 @@
-import { AppBar } from "@mui/material";
+import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
+import '../components/ProfilePage.css'; // Import your custom CSS file
 
-function MyButton() {
-  return (
-    <button>
-      Edit
-    </button>
-  );
-}
-const person = {
-  name: 'name',
-  theme: {
-    
-    color: 'black'
-  }
-};
+function ProfilePictureUploader({ onUpload }) {
+  const [selectedImage, setSelectedImage] = useState(null);
 
-export default function TodoList() {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
+  };
+
+  const handleUpload = () => {
+    onUpload(selectedImage);
+  };
+
   return (
-    <>
-    <AppBar>
-    <Navbar>
-      
-    </Navbar>
-    </AppBar>
-    
-    <div style={person.theme}>
-      <h1>{person.name}'s Todos</h1>
-      <img
-        className="avatar"
-        src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/06/gojo2.jpg"
-        alt="GOJO"
-        width={500}
-        
-      />
-      <MyButton/>
-      <ul>
-        <li>test@gmail.com</li>
-        <li>6133211*****</li>
-        <li>090******</li>
-      </ul>
+    <div className="profile-picture-uploader">
+      <label className="profile-picture-label">
+        <input type="file" accept="image/*" onChange={handleImageChange} />
+        {selectedImage ? 'Change Profile Picture' : 'Upload Profile Picture'}
+      </label>
+      {selectedImage && <img className="profile-picture" src={URL.createObjectURL(selectedImage)} alt="Profile" />}
+      {selectedImage && <button onClick={handleUpload}>Upload</button>}
     </div>
-    
-    </>
   );
 }
+
+function ProfileDetails({ name, email }) {
+  return (
+    <div className="profile-details">
+      <h2>Profile Details</h2>
+      <li>Name: {name}</li>
+      <li>Email: {email}</li>
+    </div>
+  );
+}
+
+function ProfilePage() {
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [name, setName] = useState('John Doe');
+  const [email, setEmail] = useState('johndoe@example.com');
+
+  const handleProfilePictureUpload = (image) => {
+    // Simulate profile picture upload
+    setProfilePicture(image);
+  };
+
+  return (
+    <div className="profile-container">
+      <Navbar />
+      <div className="profile-content">
+        <ProfilePictureUploader onUpload={handleProfilePictureUpload} />
+        <ProfileDetails name={name} email={email} />
+      </div>
+    </div>
+  );
+}
+
+export default ProfilePage;
