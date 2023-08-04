@@ -12,8 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import LoginIcon from "@mui/icons-material/Login";
+
 
 const handleLogout = (event) => {
   event.preventDefault();
@@ -35,23 +34,9 @@ const pages = [
 
 const authen = [];
 
-const settings = [
-  {
-    title: "Profile",
-    icon: "",
-    to: "/profile",
-  },
-  {
-    title: "Home",
-    icon: "",
-    to: "/home",
-  },
-  {
-    title: "Logout",
-    icon: "",
-    to: "/logout",
-  },
-];
+
+ 
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);

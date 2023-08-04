@@ -7,7 +7,7 @@ import Login from './Login';
 import Register from './register';
 import Home  from './page/Home';
 import Navbar from "./components/Navbar";
-import Profile  from './components/Profile';
+import Profile  from './page/Profile';
 import HomeScreen from "./page/HomeScreen";
 
 
