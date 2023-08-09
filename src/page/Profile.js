@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
-import '../components/ProfilePage.css'; // Import your custom CSS file
+import '../components/Style.css'; // Import your custom CSS file
 
 function ProfilePictureUploader({ onUpload }) {
   const [selectedImage, setSelectedImage] = useState(null);

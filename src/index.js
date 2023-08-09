@@ -9,7 +9,7 @@ import Home  from './page/Home';
 import Navbar from "./components/Navbar";
 import Profile  from './page/Profile';
 import HomeScreen from "./page/HomeScreen";
-
+import AssessmentPage from './page/AssessmentPage';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,7 +22,7 @@ root.render(
     <Route path="/Navbar" element={<Navbar />} /> 
     <Route path="/Profile" element ={<Profile/>}/>
     <Route path="/HomeScreen" element ={<HomeScreen/>}/>
-    
+    <Route path="/Assessment" element={<AssessmentPage/>} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

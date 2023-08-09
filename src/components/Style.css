@@ -1,0 +1,144 @@
+.profile-container {
+  background-color: #f9e6e6; /* Soft pink background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.profile-picture-uploader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture-label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  text-align: center;
+}
+.course-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/*ปรับCard*/
+.course-card h3 {
+  margin: 0;
+}
+
+.course-card p {
+  margin-top: 10px;
+}
+
+
+.course-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0177f5;
+  text-decoration: none;
+}
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  gap: 20px;
+}
+.course-image img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* ปรับขนาดรูปภาพเท่ากัน */
+  object-fit: contain; /* ปรับเพื่อให้รูปภาพไม่บิดเบี้ยว */
+}
+/* ปรับขนาดเว็บเบราว์เซอร์และรูปภาพให้เท่ากัน */
+@media (max-width: 768px) {
+  .course-card {
+    width: calc(33.33% - 20px);
+  }
+}
+.course-card {
+  /* ... ค่า CSS อื่น ๆ ... */
+  width: 90%; /* กำหนดความกว้างเป็น 100% */
+  max-width: none; /* ไม่จำกัดความกว้างสูงสุด */
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%; /* ขยายความสูงให้เต็มจอเมื่อขยายหน้าจอ */
+  object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ของการ์ด */
+}
+
+/* ปรับขนาดเว็บไซต์เพื่อแสดงการ์ด 1 คอลัมน์ */
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*ปรับหน้าQuiz*/
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quiz-option-label {
+  display: flex;
+  align-items: center;
+}
+
+.quiz-option-input {
+  margin-right: 5px;
+}
+
+.quiz-submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.quiz-submit-button:hover {
+  background-color: #0056b3;
+}

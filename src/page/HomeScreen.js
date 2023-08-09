@@ -1,68 +1,64 @@
-import { AppBar } from '@mui/material';
-import React, { useState } from 'react';
-import Navbar from "../components/Navbar";
-function AvatarUploader({ onUpdate }) {
-  const [selectedImage, setSelectedImage] = useState(null);
+import React from 'react';
+import CourseCard from '../components/CourseCard';
+import Navbar from '../components/Navbar'
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedImage(URL.createObjectURL(file));
-  };
 
-  const handleUpload = () => {
-    // Simulate API call and updating user profile
-    // Replace this with your actual API integration
-    setTimeout(() => {
-      onUpdate(selectedImage);
-    }, 10);
-  };
-  const person = {
-    name: 'GOJO',
-    theme: {
 
-      color: 'black'
-    }
-  };
+const CourseList = () => {
+  const courses = [
+    {
+      id: 1,
+      title: 'บทที่1',
+      description: 'Learn the basics of programming.',
+      imageURL: 'https://th.bing.com/th/id/OIP.7dbrfAdTIKG3qYKg-b2mCgHaEc?pid=ImgDet&rs=1',
+      with :150,
+      
+    },
+    {
+      id: 2,
+      title: 'วิชา',
+      description: 'Build modern web applications.',
+      imageURL: 'https://www.aaup.edu/sites/default/files/What-is-eLearning.jpg'
+    },
+    {
+      id: 3,
+      title: 'วิชา',
+      description: 'Build modern web applications.',
+      imageURL: 'https://www.99techpost.com/wp-content/uploads/2018/10/e-Learning-1024x723.jpg'
+    },
+    {
+      id: 4,
+      title: 'วิชา',
+      description: 'Build modern web applications.',
+      imageURL: 'https://th.bing.com/th/id/OIP.EMA7vc_jex5R-1xQARkJYQHaEK?pid=ImgDet&rs=1'
+    },
+    {
+      id: 5,
+      title: 'วิชา',
+      description: 'Build modern web applications.',
+      imageURL: 'https://noobie.com/wp-content/uploads/2021/08/e-learning.jpg'
+    },
+    {
+      id: 6,
+      title: 'วิชา',
+      description: 'Build modern web applications.',
+      imageURL: 'https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1'
+    },
+    // เพิ่มคอร์สเรียนเพิ่มเติมตามต้องการ
+  ];
+
   return (
     <>
-      <AppBar>
-        <Navbar>
-        </Navbar>
-      </AppBar>
-      <div>
-      <h1>{person.name}'s Todos</h1>
-      <img
-        className="avatar"
-        src={"selectedImage"} alt="Selected Avatar"
-        width={90}
-        >
-        </img>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        {selectedImage && <button onClick={handleUpload}>Upload</button>}
-        <ul>
-        <li>test@gmail.com</li>
-        <li>6133211*****</li>
-        <li>090******</li>
-      </ul>
+    <Navbar></Navbar>
+    <div>
+      <div className="course-grid">
+        {courses.map(course => (
+          <CourseCard key={course.id} course={course} />
+        ))}
       </div>
+    </div>
     </>
   );
-}
+};
 
-function ProfilePage() {
-  const [avatar, setAvatar] = useState(null);
-
-  const handleAvatarUpdate = (newAvatar) => {
-    setAvatar(newAvatar);
-  };
-
-  return (
-    <div>
-      <h1>Profile Page</h1>
-      {avatar && <img src={avatar}width={250} height={350}alt="Profile Avatar" />}
-      <AvatarUploader onUpdate={handleAvatarUpdate} />
-    </div>
-  );
-}
-
-export default ProfilePage;
+export default CourseList;
