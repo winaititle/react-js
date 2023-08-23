@@ -64,8 +64,10 @@
 .course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
+  font-size: 20px;
   gap: 20px;
+  text-align: left;
+  text-indent: 0px;
 }
 .course-image img {
   width: 100%;

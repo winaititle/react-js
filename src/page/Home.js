@@ -1,131 +1,107 @@
-import React, { useEffect } from "react";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import React from "react";
+import CourseCard from "../components/AllCourse";
 import Navbar from "../components/Navbar";
+import SideBar from "../components/Sidebar";
+import { CssBaseline } from "@mui/material";
 
+const CourseList = () => {
+  const courses = [
+    {
+      id: 1,
+      title: "บทที่ 1",
+      description: "Learn the basics of programming.",
+      imageURL:
+        "https://th.bing.com/th/id/OIP.7dbrfAdTIKG3qYKg-b2mCgHaEc?pid=ImgDet&rs=1",
+      with: 150,
+    },
+    {
+      id: 2,
+      title: "บทที่ 2",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://www.aaup.edu/sites/default/files/What-is-eLearning.jpg",
+    },
+    {
+      id: 3,
+      title: "บทที่ 3",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://www.99techpost.com/wp-content/uploads/2018/10/e-Learning-1024x723.jpg",
+    },
+    {
+      id: 4,
+      title: "บทที่ 4",
+      description: "Build modern web applications.",
 
-function Copyright() {
+      imageURL:
+        "https://th.bing.com/th/id/OIP.EMA7vc_jex5R-1xQARkJYQHaEK?pid=ImgDet&rs=1",
+    },
+    {
+      id: 5,
+      title: "บทที่ 5",
+      description: "Build modern web applications.",
+      imageURL: "https://noobie.com/wp-content/uploads/2021/08/e-learning.jpg",
+    },
+    {
+      id: 6,
+      title: "บทที่ 6",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1",
+    },
+    {
+      id: 7,
+      title: "บทที่ 7",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1",
+    },
+    {
+      id: 8,
+      title: "บทที่ 8",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1",
+    },
+    {
+      id: 9,
+      title: "บทที่ 9",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1",
+    },
+    {
+      id: 10,
+      title: "บทที่ 10",
+      description: "Build modern web applications.",
+      imageURL:
+        "https://i0.wp.com/boletines.guanajuato.gob.mx/wp-content/uploads/2020/03/iStock-985024622.jpg?w=3000&ssl=1",
+    },
+    // เพิ่มคอร์สเรียนเพิ่มเติมตามต้องการ
+  ];
+
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
-
-export default function Album() {
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    fetch("http://localhost:3333/authen", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "ok") {
-          localStorage.setItem("token", data.token);
-          // alert("authen success");
-        } else {
-          alert("authen failed!");
-          localStorage.removeItem('token');
-          window.location = "/Login";
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
-
- 
-  return (
-
-    <ThemeProvider theme={defaultTheme}>
+    <>
+    <Navbar />
       <CssBaseline />
-      <AppBar position="relative">
-        <Navbar />
-      
-      </AppBar>
-
-      <main>
-
-        <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <CardMedia
-                    component="div"
-                    sx={{
-                      // 16:9
-                      pt: "56.25%",
-                    }}
-                    image="https://source.unsplash.com/random?wallpapers"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      บทที่ 1
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Follow Us
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-      {/* End footer */}
-    </ThemeProvider>
+      <div className="app">
+        <SideBar />
+        <main className="content">
+          <div className="content_body">
+            <h2>รายวิชา: FUNDAMANTAL</h2>
+            <div className="course-grid">
+              {courses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
+            <h2>
+              <td></td>
+            </h2>
+          </div>
+        </main>
+      </div>
+    </>
   );
-}
+};
+
+export default CourseList;

@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import SideBar from "./Sidebar";
 
 
 const handleLogout = (event) => {
@@ -24,6 +25,11 @@ const pages = [
     title: "HOME",
     icon: "",
     to: "/home",
+  },
+  {
+    title: "COURSES",
+    icon: "",
+    to: "/HomeScreen",
   },
   {
     title: "MY COURSES",
@@ -57,7 +63,7 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  return (
+  return ( 
     <AppBar position="static" style={{ backgroundColor: "#DE8976" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -80,7 +86,7 @@ function ResponsiveAppBar() {
             <IconButton>
               <Avatar
                 alt="Remy Sharp"
-                src="https://logodix.com/logo/1725234.png"
+                src="/assets/logo.jpg"
               />
             </IconButton>
           </Typography>
