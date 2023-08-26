@@ -8,7 +8,7 @@ const CourseList = () => {
   const courses = [
     {
       id: 1,
-      title: "บทที่ 1",
+      title: "บทที่ 11",
       description: "ความรู้เบื้องต้นเกี่ยวกับคอมพิวเตอร์",
       imageURL:
         "https://www.britishcouncil.or.th/sites/default/files/styles/bc-landscape-630x354/public/10-sentences-and-phrases-to-begin-business-email.png?itok=VEctoU3W",
