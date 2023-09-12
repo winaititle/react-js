@@ -8,7 +8,7 @@ const CourseList = () => {
   const courses = [
     {
       id: 1,
-      title: "บทที่ 111",
+      title: "บทที่ 1",
       description: "ความรู้เบื้องต้นเกี่ยวกับคอมพิวเตอร์",
       imageURL:
         "https://www.britishcouncil.or.th/sites/default/files/styles/bc-landscape-630x354/public/10-sentences-and-phrases-to-begin-business-email.png?itok=VEctoU3W",
@@ -68,7 +68,7 @@ const CourseList = () => {
         <SideBar />
         <main className="content">
           <div className="content_body">
-            <h2>รายวิชา: FUNDAMANTAL</h2>
+            <h2>รายวิชา: FUNDAMANTAL5555</h2>
             <div className="course-grid">
               {courses.map((course) => (
                 <CourseCard key={course.id} course={course} />
