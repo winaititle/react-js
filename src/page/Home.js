@@ -1,10 +1,38 @@
-import React from "react";
+import React,{useEffect} from "react";
 import CourseCard from "../components/AllCourse";
 import Navbar from "../components/Navbar";
 import SideBar from "../components/Sidebar";
 import { CssBaseline } from "@mui/material";
 
+
 const CourseList = () => {
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    fetch("  http://localhost:3333/authen", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization':'Bearer '+token,
+      },
+      
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "ok") {
+          localStorage.setItem("token", data.token);
+          alert("เข้าสู่ระบบสำเร็จ");
+        } else {
+          alert("กรุณาเข้าสู่ระบบ");
+          window.location = "/Login";
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  
+      
+    }, [])
+  
   const courses = [
     {
       id: 1,

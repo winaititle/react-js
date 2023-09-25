@@ -3,8 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
+
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -50,7 +50,7 @@ export default function SignUp() {
       Org_s: data.get("Org_s"),
     };
 
-    fetch("https://de37-223-206-132-85.ngrok-free.app/register", {
+    fetch("http://localhost:3333/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
