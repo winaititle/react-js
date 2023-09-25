@@ -18,10 +18,8 @@ const CourseList = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.status === "ok") {
+        if (data.status !== "ok") {
           localStorage.setItem("token", data.token);
-          alert("เข้าสู่ระบบสำเร็จ");
-        } else {
           alert("กรุณาเข้าสู่ระบบ");
           window.location = "/Login";
         }
@@ -96,7 +94,7 @@ const CourseList = () => {
         <SideBar />
         <main className="content">
           <div className="content_body">
-            <h2>รายวิชา: FUNDAMANTAL5555</h2>
+            <h2>รายวิชา: FUNDAMANTAL</h2>
             <div className="course-grid">
               {courses.map((course) => (
                 <CourseCard key={course.id} course={course} />
