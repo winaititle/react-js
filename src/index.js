@@ -11,6 +11,9 @@ import Profile  from './page/Profile';
 import HomeScreen from "./page/HomeScreen";
 import AssessmentPage from './page/AssessmentPage';
 import Sidebar from "./components/Sidebar";
+import FromUpload from "./FromUpload";
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -24,6 +27,7 @@ root.render(
     <Route path="/HomeScreen" element ={<HomeScreen/>}/>
     <Route path="/Assessment" element={<AssessmentPage/>} />
     <Route path="/Sidebar/" element={<Sidebar/>} />
+    <Route path="/courses/1" element={<FromUpload/>} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

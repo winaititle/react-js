@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+
+
 
 const AllCourse = ({ course }) => {
   return (
@@ -12,7 +13,7 @@ const AllCourse = ({ course }) => {
       <p>{course.description}</p>
       <Link to={`/courses/${course.id}`}>ส่งแบบฝึกหัด</Link>
       
-      
+    
     </div>
   );
 };
