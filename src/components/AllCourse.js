@@ -10,7 +10,7 @@ const AllCourse = ({ course }) => {
       </div>
       <h3>{course.title}</h3>
       <p>{course.description}</p>
-      <Link to={`/courses/${course.id}`}>รายละเอียด</Link>  <Link to={`/courses/${course.id}`}>แบบฝึกหัด</Link>
+      <Link to={`/courses/${course.id}`}>ส่งแบบฝึกหัด</Link>
       
       
     </div>

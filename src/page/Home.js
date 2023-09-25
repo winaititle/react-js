@@ -96,7 +96,7 @@ const CourseList = () => {
         <SideBar />
         <main className="content">
           <div className="content_body">
-            <h2>รายวิชา: FUNDAMANTAL</h2>
+            <h2>รายวิชา: FUNDAMANTAL5555</h2>
             <div className="course-grid">
               {courses.map((course) => (
                 <CourseCard key={course.id} course={course} />
